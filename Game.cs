@@ -62,6 +62,7 @@ public class Game : Spatial
 		player = GetNode<Player>(playerPath);
 		CreateMap();
 		Godot.Timer timer = new Godot.Timer();
+		AddChild(timer);
 		timer.Start(0.5f);
 		timer.Connect("timeout",this,"CheckForLoading");
 	}
