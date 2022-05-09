@@ -2,12 +2,10 @@
 
 [ext_resource path="res://Game.cs" type="Script" id=1]
 [ext_resource path="res://Player.cs" type="Script" id=2]
+[ext_resource path="res://nesto.png" type="Texture" id=3]
 
-[sub_resource type="SpatialMaterial" id=8]
-albedo_color = Color( 0.14902, 1, 0, 1 )
-
-[sub_resource type="SpatialMaterial" id=9]
-albedo_color = Color( 1, 0, 0, 1 )
+[sub_resource type="SpatialMaterial" id=12]
+albedo_texture = ExtResource( 3 )
 
 [sub_resource type="SphereShape" id=6]
 
@@ -19,7 +17,7 @@ albedo_color = Color( 1, 0, 0, 1 )
 
 [node name="Game" type="Spatial"]
 script = ExtResource( 1 )
-blockMaterials = [ SubResource( 8 ), SubResource( 9 ) ]
+blockMaterials = [ SubResource( 12 ) ]
 
 [node name="Terrain" type="StaticBody" parent="."]
 
@@ -34,7 +32,7 @@ mesh = SubResource( 7 )
 material/0 = null
 
 [node name="Player" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9521, 58.7338, -18.4779 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.952, 102.056, 26.1553 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Player"]

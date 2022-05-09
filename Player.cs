@@ -18,12 +18,12 @@ public class Player : KinematicBody
             Input.GetAxis("ui_down","ui_up")
         );
         Vector3 pos = Translation;
-        Basis basis = GlobalTransform.basis;
+        Basis basis = camera.GlobalTransform.basis;
         velocity.x = 0;
         velocity.z = 0;
-        velocity.y -= 10*delta;
-        velocity.x += basis.x.x * move.x + basis.x.z * move.y;
-        velocity.z -= basis.z.x * move.x + basis.z.z * move.y;
+        velocity.y -= 100*delta;
+        velocity.x += basis.x.x * move.x * 100 + basis.x.z * move.y * 100;
+        velocity.z -= basis.z.x * move.x * 100 + basis.z.z * move.y * 100;
         velocity = MoveAndSlide(velocity);
 	}
 	public override void _Input(InputEvent @event)
